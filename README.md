@@ -591,12 +591,20 @@ CALL MCP/External WHEN:        DON'T CALL WHEN:
 
 ### Context Getting Full (>70%)
 
+```bash
+# Auto-archive before compact
+python ~/.claude/scripts/auto-archive.py archive
+
+# Then compact
+/compact
 ```
-1. Compress conversation into context.md
-2. Save key decisions to MCP
-3. Update status.md with summary
-4. Clear conversation, continue with context
+
+Or use the auto-archive script:
+```bash
+python ~/.claude/scripts/auto-archive.py auto  # Archives only if > 60%
 ```
+
+See [docs/auto-compression.md](docs/auto-compression.md) for full setup.
 
 ## Model Selection Strategy
 
@@ -682,9 +690,13 @@ efficient-context-RAG/
 ├── examples/
 │   ├── mcp-commands.md         # MCP usage examples
 │   └── session-workflow.md     # Session protocols
+├── claude-config/scripts/
+│   ├── init-project.sh         # Project initializer
+│   └── auto-archive.py         # Automatic context compression
 └── docs/
     ├── progressive-loading.md  # Loading strategy deep-dive
     ├── mcp-integration.md      # MCP setup and usage
+    ├── auto-compression.md     # Automatic archiving setup
     ├── semantic-rag-upgrade.md # Add true semantic search (Local/API)
     ├── security.md             # What NOT to store (important!)
     ├── benchmarks.md           # Real-world measurements
