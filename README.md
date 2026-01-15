@@ -685,6 +685,7 @@ efficient-context-RAG/
 └── docs/
     ├── progressive-loading.md  # Loading strategy deep-dive
     ├── mcp-integration.md      # MCP setup and usage
+    ├── semantic-rag-upgrade.md # Add true semantic search (Local/API)
     ├── security.md             # What NOT to store (important!)
     ├── benchmarks.md           # Real-world measurements
     └── troubleshooting.md      # Common issues & fixes
@@ -700,6 +701,30 @@ MIT License - Use freely, contribute back!
 2. Create a feature branch
 3. Add your improvements
 4. Submit a PR
+
+---
+
+---
+
+## Scaling Up: Semantic RAG
+
+For larger projects (200+ entities), you can add true semantic search:
+
+| Option | Cost | Setup | Best For |
+|--------|------|-------|----------|
+| **Local (Ollama)** | Free | Medium | Privacy, offline |
+| **API (OpenAI)** | $0.02/month | Easy | Simplicity, quality |
+
+```bash
+# Example: Find similar concepts
+python ~/.claude/scripts/semantic_rag.py search "how to handle auth securely"
+
+# Returns semantically similar results, not just keyword matches:
+# 1. [94%] lesson:auth:001 - "Use httpOnly cookies for refresh tokens"
+# 2. [87%] pattern:jwt:001 - "JWT refresh token rotation..."
+```
+
+See [docs/semantic-rag-upgrade.md](docs/semantic-rag-upgrade.md) for full setup guide.
 
 ---
 
