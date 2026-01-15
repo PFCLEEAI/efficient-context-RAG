@@ -661,6 +661,8 @@ Communication via handoffs/*.md
 ```
 efficient-context-RAG/
 ├── README.md                    # This file
+├── QUICK_REFERENCE.md          # Daily cheat sheet (print this!)
+├── CONTRIBUTING.md             # How to contribute
 ├── claude-config/
 │   ├── CLAUDE.md               # Universal agent config
 │   ├── scripts/
@@ -681,9 +683,11 @@ efficient-context-RAG/
 │   ├── mcp-commands.md         # MCP usage examples
 │   └── session-workflow.md     # Session protocols
 └── docs/
-    ├── progressive-loading.md
-    ├── mcp-integration.md
-    └── troubleshooting.md
+    ├── progressive-loading.md  # Loading strategy deep-dive
+    ├── mcp-integration.md      # MCP setup and usage
+    ├── security.md             # What NOT to store (important!)
+    ├── benchmarks.md           # Real-world measurements
+    └── troubleshooting.md      # Common issues & fixes
 ```
 
 ## License
